@@ -8,7 +8,6 @@ class SignUpForm extends React.Component {
       username: '',
       password: ''
     };
-    this.handleSubmit.bind(this);
   }
 
   changeInput = (e) => {
