@@ -4,14 +4,15 @@ import './SignUpForm.js'
 class SignUpForm extends React.Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
       username: '',
-      password:''
-     };
+      password: ''
+    };
+    this.handleSubmit.bind(this);
   }
 
   changeInput = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
 
     this.setState({
       //这个可以用变量代表key，用法是[keynameVar]
@@ -20,23 +21,28 @@ class SignUpForm extends React.Component {
   }
 
   handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("=========");
+    console.log(this.state);
 
-      console.log("username:"+e.target.username.value); 
-      console.log("passowrd:"+e.target.passowrd.value); 
-    
+    // console.log(e.target);
+
+    // console.log("username:" + e.target.username.value);
+    // console.log("passowrd:" + e.target.passowrd.value);
+
     // console.log('Your name is', e.target.username.value); 
 
     this.setState(
       {
-        username:'',
-        passowrd:''
+        username: '',
+        password: ''
       }
     )
-    
+
   }
 
   render() {
-    const {username, password} = this.state;
+    const { username, password } = this.state;
     return (
 
       <form onSubmit={this.handleSubmit}>
